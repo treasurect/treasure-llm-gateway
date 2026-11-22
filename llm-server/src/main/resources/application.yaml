@@ -1,0 +1,41 @@
+server:
+  port: 8090
+
+spring:
+  application:
+    name: llm-server
+
+treasure:
+  llm:
+    providers:
+      deepseek:
+        enabled: true
+        protocol: openai-compatible
+        base-url: https://api.deepseek.com
+        api-key: ${DEEPSEEK_API_KEY}
+        timeout: 180s
+      qwen:
+        enabled: true
+        protocol: openai-compatible
+        base-url: https://dashscope.aliyuncs.com/compatible-mode/v1
+        api-key: ${QWEN_API_KEY}
+        timeout: 180s
+    models:
+      deepseek-chat:
+        provider: deepseek
+        model-name: deepseek-chat
+        capabilities:
+          streaming: true
+          vision: false
+          reasoning: true
+          tool-calling: false
+          json-mode: false
+      qwen-plus:
+        provider: qwen
+        model-name: qwen-plus
+        capabilities:
+          streaming: true
+          vision: false
+          reasoning: true
+          tool-calling: false
+          json-mode: false
