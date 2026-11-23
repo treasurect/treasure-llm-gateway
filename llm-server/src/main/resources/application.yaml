@@ -5,6 +5,9 @@ spring:
   application:
     name: llm-server
 
+jwt:
+  public-key-path: ${JWT_PUBLIC_KEY_PATH}
+
 treasure:
   llm:
     providers:
@@ -20,22 +23,100 @@ treasure:
         base-url: https://dashscope.aliyuncs.com/compatible-mode/v1
         api-key: ${QWEN_API_KEY}
         timeout: 180s
+      glm:
+        enabled: true
+        protocol: openai-compatible
+        base-url: https://open.bigmodel.cn/api/paas/v4
+        api-key: ${GLM_API_KEY}
+        timeout: 180s
+      kimi:
+        enabled: true
+        protocol: openai-compatible
+        base-url: https://api.moonshot.cn/v1/responses
+        api-key: ${KIMI_API_KEY}
+        timeout: 180s
+
     models:
-      deepseek-chat:
+      # 对客户端暴露的 modelId，客户端请求时只认这个 key
+      deepseek-flash:
         provider: deepseek
-        model-name: deepseek-chat
+        model-name: deepseek-flash
+        enabled: true
+        capabilities:
+          streaming: true
+          vision: true
+          reasoning: true
+          tool-calling: true
+          json-mode: true
+
+      deepseek-pro:
+        provider: deepseek
+        model-name: deepseek-v4-pro
+        enabled: true
         capabilities:
           streaming: true
           vision: false
           reasoning: true
-          tool-calling: false
-          json-mode: false
-      qwen-plus:
+          tool-calling: true
+          json-mode: true
+
+      qwen-flash:
         provider: qwen
-        model-name: qwen-plus
+        model-name: qwen3.8-flash
+        capabilities:
+          streaming: true
+          vision: true
+          reasoning: true
+          tool-calling: false
+          json-mode: true
+
+      qwen-max:
+        provider: qwen
+        model-name: qwen4-max
+        capabilities:
+          streaming: true
+          vision: true
+          reasoning: true
+          tool-calling: false
+          json-mode: true
+
+      glm-flash:
+        provider: glm
+        model-name: GLM-5.3-Flash
+        capabilities:
+          streaming: true
+          vision: false
+          reasoning: true
+          tool-calling: false
+          json-mode: true
+
+      glm-5.3:
+        provider: glm
+        model-name: GLM-5.3
+        capabilities:
+          streaming: true
+          vision: false
+          reasoning: true
+          tool-calling: false
+          json-mode: true
+
+      kimi-k3:
+        provider: kimi
+        model-name: kimi-k3
         capabilities:
           streaming: true
           vision: false
           reasoning: true
           tool-calling: false
           json-mode: false
+
+      kimi-k3.1-pro:
+        provider: kimi
+        model-name: kimi-k3.1-pro
+        capabilities:
+          streaming: true
+          vision: false
+          reasoning: true
+          tool-calling: false
+          json-mode: false
+
