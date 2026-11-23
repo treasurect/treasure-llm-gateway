@@ -14,36 +14,21 @@
     </parent>
 
     <properties>
-        <revision>0.0.2</revision>
-
         <java.version>17</java.version>
         <maven.compiler.release>17</maven.compiler.release>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.deploy.skip>true</maven.deploy.skip>
     </properties>
 
     <groupId>com.treasure.llm</groupId>
     <artifactId>treasure-llm-gateway</artifactId>
-    <version>${revision}</version>
+    <version>1.0.0-SNAPSHOT</version>
 
     <packaging>pom</packaging>
 
     <modules>
         <module>llm-spring-boot-starter</module>
-        <module>llm-server</module>
     </modules>
-
-    <distributionManagement>
-        <repository>
-            <id>github</id>
-            <name>GitHub Packages</name>
-            <url>https://maven.pkg.github.com/treasurect/treasure-llm-gateway</url>
-        </repository>
-        <snapshotRepository>
-            <id>github</id>
-            <name>GitHub Packages Snapshots</name>
-            <url>https://maven.pkg.github.com/treasurect/treasure-llm-gateway</url>
-        </snapshotRepository>
-    </distributionManagement>
 
     <build>
         <plugins>
