@@ -4,6 +4,19 @@ server:
 spring:
   application:
     name: llm-server
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3306/llm_gateway?useUnicode=true&characterEncoding=utf8&serverTimezone=Asia/Shanghai
+    username: treasure
+    password: ${DB_PWD}
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  sql:
+    init:
+      mode: never
+
+mybatis:
+  configuration:
+    map-underscore-to-camel-case: true
 
 jwt:
   public-key-path: ${JWT_PUBLIC_KEY_PATH}
