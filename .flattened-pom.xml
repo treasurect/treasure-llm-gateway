@@ -19,7 +19,7 @@
     </license>
   </licenses>
   <modules>
-    <module>llm-spring-boot-starter</module>
+    <module>llm-gateway-starter</module>
     <module>llm-server</module>
   </modules>
   <distributionManagement>

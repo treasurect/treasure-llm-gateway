@@ -67,7 +67,7 @@ treasure:
           streaming: true
           vision: true
           reasoning: true
-          tool-calling: false
+          tool-calling: true
           json-mode: true
 
       qwen-max:
@@ -77,7 +77,7 @@ treasure:
           streaming: true
           vision: true
           reasoning: true
-          tool-calling: false
+          tool-calling: true
           json-mode: true
 
       glm-flash:
@@ -85,9 +85,9 @@ treasure:
         model-name: GLM-5.3-Flash
         capabilities:
           streaming: true
-          vision: false
+          vision: true
           reasoning: true
-          tool-calling: false
+          tool-calling: true
           json-mode: true
 
       glm-5.3:
@@ -97,7 +97,7 @@ treasure:
           streaming: true
           vision: false
           reasoning: true
-          tool-calling: false
+          tool-calling: true
           json-mode: true
 
       kimi-k3:
@@ -105,7 +105,7 @@ treasure:
         model-name: kimi-k3
         capabilities:
           streaming: true
-          vision: false
+          vision: true
           reasoning: true
           tool-calling: false
           json-mode: false
@@ -115,8 +115,8 @@ treasure:
         model-name: kimi-k3.1-pro
         capabilities:
           streaming: true
-          vision: false
+          vision: true
           reasoning: true
-          tool-calling: false
-          json-mode: false
+          tool-calling: true
+          json-mode: true
 

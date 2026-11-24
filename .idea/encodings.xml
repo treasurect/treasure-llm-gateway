@@ -3,6 +3,7 @@
   <component name="Encoding">
     <file url="file://$PROJECT_DIR$/llm-core/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/llm-core/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/llm-gateway-starter/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/llm-provider-openai/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/llm-provider-openai/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/llm-server/src/main/java" charset="UTF-8" />

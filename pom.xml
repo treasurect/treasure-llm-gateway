@@ -27,7 +27,7 @@
     <packaging>pom</packaging>
 
     <modules>
-        <module>llm-spring-boot-starter</module>
+        <module>llm-gateway-starter</module>
     </modules>
 
     <build>
